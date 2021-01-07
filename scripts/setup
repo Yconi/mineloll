@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Could not parse the first argument; Minecraft server version"
+    exit 1
+fi
+
+URL="https://cdn.getbukkit.org/spigot/spigot-$1.jar"
+(cd ./server && wget $URL)

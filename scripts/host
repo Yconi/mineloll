@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Could not parse the first argument; ngrok auth token"
+    exit 1
+fi
+
+region="sa"
+port="25565"
+(cd ./environment && ./ngrok authtoken $1 && ./ngrok tcp -region $region $port)

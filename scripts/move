@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mv ./external/* ./server/
+touch ./external/.gitkeep

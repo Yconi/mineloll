@@ -1,0 +1,7 @@
+#!/bin/bash
+
+FILENAME="ngrok-stable-linux-amd64.zip"
+URL="https://bin.equinox.io/c/4VmDzA7iaHb/$FILENAME"
+
+(cd ./environment && wget $URL && unzip $FILENAME && rm -rf $FILENAME)
+(cd ./server && echo "eula=true" >> eula.txt)

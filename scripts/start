@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Could not parse the first argument; Minecraft server version"
+    exit 1
+fi
+
+export JAVA_TOOL_OPTIONS=-Xmx16G
+
+FILE="spigot-$1.jar"
+(cd ./server && java -Xmx16G -Xms15G -jar $FILE)
+./scripts/save
